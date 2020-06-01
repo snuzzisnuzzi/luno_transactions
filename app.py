@@ -11,13 +11,15 @@ database = []
 def read_database():
     """insert a code here to read the data base and get all pending transaction"""
 
-    """if there are values in the database, proceed wto the next line. else, exit function and return to loop"""
+    """if there are values in the database, proceed to the next line. else, exit function and return to loop"""
 
     if len(database) > 0:
         file_update = open('transactions.json', 'w')
         json.dump(database, file_update)
         file_update.close()
         make_transfer()
+    else:
+        pass
 
 
 def make_transfer():
